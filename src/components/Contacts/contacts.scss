@@ -1,0 +1,12 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+.contacts {
+  color: var(--color-tertiary);
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  padding: 56px 0 70px;
+  padding-top: 100px;
+}

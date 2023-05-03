@@ -1,0 +1,108 @@
+$default-width: 1200px;
+
+$screen-mobileS: 320px;
+$screen-tablet: 768px;
+$screen-laptopS: 1024px;
+$screen-laptop: 1240px;
+$screen-4k: 2560px;
+
+// media grid points, call example : @include size-laptop()
+@mixin size-mobileS {
+  @media (min-width: $screen-mobileS) {
+    @content;
+  }
+}
+
+@mixin size-tablet {
+  @media (min-width: $screen-tablet) {
+    @content;
+  }
+}
+
+@mixin size-laptop {
+  @media (min-width: $screen-laptop) {
+    @content;
+  }
+}
+
+@mixin size-laptopS {
+  @media (min-width: $screen-laptopS) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+// main default container, using by wrapper class
+@mixin container {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include size-tablet() {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include size-laptop() {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: $default-width;
+  }
+}
+
+@mixin browser-placeholder($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder {
+    color: $color;
+  } /* FF 4-18 */
+  &::-moz-placeholder {
+    color: $color;
+  } /* FF 19+ */
+  &:-ms-input-placeholder {
+    color: $color;
+  } /* IE 10+ */
+}
+
+// transitions
+@mixin transition-veryfast() {
+  transition: all 150ms ease;
+}
+
+@mixin transition-fast() {
+  transition: all 350ms ease;
+}
+
+@mixin transition-medium() {
+  transition: all 500ms ease;
+}
+
+@mixin transition-slow() {
+  transition: all 650ms ease;
+}
+
+@mixin transition-veryslow() {
+  transition: all 850ms ease;
+}
+
+@mixin transition-cubic-fast() {
+  transition: all 0.3s cubic-bezier(0, 0.995, 0.99, 1) 0.3s;
+}
+
+// shorthand for full absolute
+@mixin position-absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

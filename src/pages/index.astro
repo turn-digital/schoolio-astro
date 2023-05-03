@@ -1,0 +1,22 @@
+---
+import "~styles/styles.scss";
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header/Header";
+import { t, changeLanguage } from "i18next";
+import Footer from "~components/Footer/Footer";
+import Contacts from "~components/Contacts/Contacts";
+import Features from "~components/Features/Features";
+import Benefits from "~components/Benefits/Benefits";
+
+changeLanguage("lv");
+---
+
+<Layout title={t("global.metaTitle")} desc={t("index.metaDesc")}>
+  <main>
+    <Header />
+    <Benefits />
+    <Features />
+    <Contacts />
+    <Footer />
+  </main>
+</Layout>

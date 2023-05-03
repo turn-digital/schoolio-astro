@@ -1,0 +1,11 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.header {
+  background: #0b0f3f;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}

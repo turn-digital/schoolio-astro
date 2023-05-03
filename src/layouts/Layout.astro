@@ -1,0 +1,61 @@
+---
+export interface Props {
+  title: string;
+  desc: string;
+}
+
+const { title, desc } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script defer data-domain="balsutalka.lv" src="https://plausible.io/js/script.outbound-links.js"></script>
+    <link rel="icon" type="image/svg+xml" href="/Favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Balsu talka - palīdzi attīstīt tehnoloģijas latviešu valodā</title>
+    <meta name="description" content={desc} />
+    <meta property="og:url" content="https://balsutalka.lv/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Balsu talka - palīdzi attīstīt tehnoloģijas latviešu valodā" />
+    <meta property="og:description" content="Palīdzi attīstīt latviešu valodas tehnoloģijas ar savu balsi!" />
+    <meta property="og:image" content="https://balsutalka.lv/fb_cover.png" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  @font-face {
+    font-family: "Zilla Slab";
+    src: url("/fonts/ZillaSlab/ZillaSlab-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans/OpenSans-Italic.woff") format("woff");
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans/OpenSans-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans/OpenSans-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
