@@ -7,7 +7,7 @@ import react from "@astrojs/react";
 
 export default defineConfig({
   site: "https://turn-digital.github.io",
-  // base: "schoolio-astro/",
+  base: "schoolio-astro/",
   integrations: [
     astroI18next(),
     image({
